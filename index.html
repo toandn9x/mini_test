@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>play music</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<div>
+		<h1>test play music</h1>
+		<input type="button" onclick="togglePlay()" value="play">
+		<audio preload="auto" id="music">
+            <source src="bgnh1.mp3" type="audio/mpeg" />
+            <source src="bgnh2.mp3" type="audio/mpeg" />
+        </audio>
+	</div>
+<script>
+	var myAudio = document.getElementById("music");
+	var isPlaying = false;
+
+	function togglePlay() {
+	  isPlaying ? myAudio.pause() : myAudio.play();
+	};
+
+	myAudio.onplaying = function() {
+	  isPlaying = true;
+	};
+	myAudio.onpause = function() {
+	  isPlaying = false;
+	};
+</script>
+</body>
+</html>
